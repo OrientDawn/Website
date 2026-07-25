@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="404错误 - 页面未找到。您访问的页面可能已被删除、移动或不存在，请返回启明曙光官网首页继续浏览。">
+    <meta name="keywords" content="404错误,页面未找到,NotFound,启明曙光,Oriental Dawn,官网首页">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#0F4C81">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <title>404 - 页面未找到</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.orientdawn.com/image/logo-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.orientdawn.com/image/logo-icon.png">
+    <link rel="canonical" href="https://www.orientdawn.com/404.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.orientdawn.com/404.html">
+    <link rel="alternate" hreflang="en" href="https://www.orientdawn.com/en/404.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.orientdawn.com/404.html">
+    <link rel="home" href="https://www.orientdawn.com">
+    <link rel="author" href="https://www.orientdawn.com">
+    <link rel="publisher" href="https://www.orientdawn.com">
+    
+    <meta property="og:title" content="404 - 页面未找到">
+    <meta property="og:description" content="404错误 - 页面未找到。您访问的页面可能已被删除、移动或不存在，请返回启明曙光官网首页继续浏览。">
+    <meta property="og:url" content="https://www.orientdawn.com/404.html">
+    <meta property="og:type" content="error">
+    <meta property="og:site_name" content="">
+    <meta property="og:image" content="https://www.orientdawn.com/image/logo-icon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="启明曙光官网">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="404 - 页面未找到">
+    <meta name="twitter:description" content="404错误 - 页面未找到。请返回启明曙光官网首页继续浏览。">
+    <meta name="twitter:image" content="https://www.orientdawn.com/image/logo-icon.png">
+    <meta name="twitter:image:alt" content="启明曙光官网">
+    <meta name="twitter:site" content="@orientdawn">
+    
+    <link rel="dns-prefetch" href="https://www.orientdawn.com">
+    
+    <script src="./js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="./js/fontawesome-free-6.5.2-web/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F4C81',
+                        secondary: '#FF8A00',
+                        dark: '#1A202C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        @layer utilities {
+            .text-shadow-lg {
+                text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            }
+            .bg-gradient-main {
+                background: linear-gradient(102deg, #e40303 0%, #d1be20 100%);
+            }
+            .glass-card {
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .transition-custom {
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        @keyframes float-up {
+            0% { 
+                transform: translateY(100vh) scale(1); 
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-10vh) scale(0.5); 
+                opacity: 0;
+            }
+        }
+        
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle ease-in-out infinite;
+            box-shadow: 0 0 6px 2px rgba(255, 215, 0, 0.5);
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float-up linear infinite;
+            filter: blur(1px);
+        }
+        
+        .pentagon {
+            position: absolute;
+            animation: pentagon-float ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+        }
+
+        @keyframes pentagon-float {
+            0%, 100% {
+                transform: translateY(0) rotate(var(--initial-rotation, 0deg)) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) rotate(calc(var(--initial-rotation, 0deg) + 5deg)) scale(1.1);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes float-1 {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+            50% { transform: translateY(-15px) translateX(10px); opacity: 0.8; }
+        }
+
+        @keyframes float-2 {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { transform: translateY(-20px) translateX(-5px); opacity: 0.7; }
+        }
+
+        @keyframes float-3 {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.5; }
+            50% { transform: translateY(-10px) translateX(15px); opacity: 0.9; }
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.3; transform: rotate(45deg) translateX(-30%); }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; transform: rotate(45deg) translateX(30%); }
+        }
+
+        @keyframes rotate-diamond {
+            0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.3; }
+            50% { transform: rotate(45deg) scale(1.2); opacity: 0.6; }
+        }
+
+        .animate-float-1 { animation: float-1 4s ease-in-out infinite; }
+        .animate-float-2 { animation: float-2 5s ease-in-out infinite; }
+        .animate-float-3 { animation: float-3 3.5s ease-in-out infinite; }
+        .animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+        .animate-rotate-diamond { animation: rotate-diamond 4s ease-in-out infinite; }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        @keyframes pulse-ring-2 {
+            0% { transform: scale(1.2); opacity: 0.6; }
+            100% { transform: scale(1.8); opacity: 0; }
+        }
+        .animate-pulse-ring {
+            animation: pulse-ring 2s ease-out infinite;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .animate-pulse-ring-2 {
+            animation: pulse-ring-2 2s ease-out infinite;
+            border: 2px solid rgba(255,255,255,0.3);
+            animation-delay: 1s;
+        }
+        @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-orbit {
+            animation: orbit 10s linear infinite;
+        }
+        @keyframes twinkle-sign {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        .animate-twinkle-sign {
+            animation: twinkle-sign 2s ease-in-out infinite;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+        .animate-pulse-subtle {
+            animation: pulse-subtle 4s ease-in-out infinite;
+        }
+        @font-face {
+          font-family: 'Pacifico-Regular';
+          src: url("./ttf/Pacifico-Regular.ttf");
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ErrorPage",
+        "name": "404 - 页面未找到",
+        "description": "404错误 - 页面未找到。您访问的页面可能已被删除、移动或不存在，请返回启明曙光官网首页继续浏览。",
+        "url": "https://www.orientdawn.com/404.html",
+        "potentialAction": [
+            {
+                "@type": "SearchAction",
+                "target": "https://www.orientdawn.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            },
+            {
+                "@type": "NavigateToAction",
+                "target": "https://www.orientdawn.com",
+                "name": "返回首页"
+            }
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "",
+            "url": "https://www.orientdawn.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.orientdawn.com/image/logo-icon.png",
+                "width": 1200,
+                "height": 630
+            }
+        }
+    }
+    </script>
+</head>
+
+<body class="font-sans bg-gradient-main text-white min-h-screen relative">
+    <div class="absolute inset-0 grid-bg opacity-50"></div>
+    
+    <!-- 五角星层 -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="pentagons-container"></div>
+    </div>
+    
+    <!-- 星星背景层 -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="stars-container"></div>
+        <div class="particles-container"></div>
+    </div>
+    
+    <!-- 光晕效果 -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-300 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-300 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-300 rounded-full blur-3xl animate-pulse" style="animation-delay: 0.5s;"></div>
+    </div>
+    
+    <!-- 浮动装饰元素 -->
+    <div class="absolute top-1/4 right-1/4 w-8 h-8 border border-white/10 rounded-lg rotate-12 animate-float-1"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-6 h-6 border border-white/10 rounded-full animate-float-2"></div>
+    <div class="absolute top-1/3 left-1/3 w-4 h-4 bg-white/15 rounded-full animate-pulse" style="animation-duration: 1.5s;"></div>
+    <div class="absolute bottom-1/3 right-1/3 w-3 h-3 bg-white/10 rounded-lg rotate-45 animate-pulse" style="animation-duration: 2s; animation-delay: 0.3s;"></div>
+    
+    <!-- 对角线装饰 -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="absolute -top-1/2 -left-1/2 w-full h-1 bg-gradient-to-r from-white/20 to-transparent rotate-45 animate-shimmer"></div>
+        <div class="absolute -bottom-1/2 -right-1/2 w-full h-1 bg-gradient-to-l from-white/20 to-transparent rotate-45 animate-shimmer" style="animation-delay: 1.5s;"></div>
+    </div>
+    
+    <!-- 菱形装饰 -->
+    <div class="absolute top-1/4 right-1/4 w-6 h-6 border border-white/20 rotate-45 animate-rotate-diamond"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-4 h-4 border border-white/15 rotate-45 animate-rotate-diamond" style="animation-delay: 1s;"></div>
+
+    <main role="main" aria-label="404错误页面" class="container mx-auto px-4 md:px-6 relative z-10 min-h-screen flex flex-col items-center justify-center py-12 md:py-20">
+        <article class="flex flex-col items-center text-center max-w-lg w-full" aria-labelledby="error-title">
+            <header>
+                <h1 id="error-title" class="text-[clamp(1.8rem,4vw,3rem)] font-extrabold mb-3 md:mb-4 text-shadow-lg">
+                    页面未找到
+                </h1>
+                <p class="text-lg md:text-xl mb-8 md:mb-10 opacity-90">
+                    您访问的页面不存在或已被移动。请返回首页继续浏览，或通过下方链接导航到其他页面。
+                </p>
+            </header>
+
+            <nav aria-label="404页面导航" class="w-full">
+                <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 hover:shadow-xl transition-custom text-lg mb-8 md:mb-10" aria-label="返回启明曙光官网首页">
+                    返回官网
+                </a>
+
+                <div class="glass-card rounded-2xl p-6 md:p-8 w-full hover:bg-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-500 mb-6">
+                    <h2 class="text-lg font-semibold mb-4">快速导航</h2>
+                    <ul class="grid grid-cols-2 gap-3">
+                        <li>
+                            <a href="index.html#brand" class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 text-sm" aria-label="关于公司">
+                                <i class="fa-solid fa-building" aria-hidden="true"></i>关于公司
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#research" class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 text-sm" aria-label="研究范围">
+                                <i class="fa-solid fa-flask" aria-hidden="true"></i>研究范围
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#sub-brands" class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 text-sm" aria-label="旗下品牌">
+                                <i class="fa-solid fa-tags" aria-hidden="true"></i>旗下品牌
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#join" class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 text-sm" aria-label="加入我们">
+                                <i class="fa-solid fa-users" aria-hidden="true"></i>加入我们
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 md:p-8 w-full hover:bg-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-500" role="dialog" aria-labelledby="help-heading">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <i class="fa-solid fa-circle-question text-yellow-300" aria-hidden="true"></i>
+                        <h2 id="help-heading" class="text-lg font-semibold">需要帮助？</h2>
+                    </div>
+                    <p class="text-white/80 text-sm text-center mb-4">
+                        如果您认为这是一个错误，或者需要其他帮助，请联系我们的管理员
+                    </p>
+                    <a href="mailto:contact@orientdawn.com" class="flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] px-6 py-3 rounded-full font-medium transition-all duration-300" aria-label="联系我们 - contact@orientdawn.com">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>contact@orientdawn.com</span>
+                    </a>
+                </div>
+            </nav>
+        </article>
+    </main>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function()
+        {
+            function createStars()
+            {
+                const starsContainer = document.querySelector('.stars-container');
+                const starCount = 80;
+                
+                for (let i = 0; i < starCount; i++)
+                {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.style.left = Math.random() * 100 + '%';
+                    star.style.top = Math.random() * 100 + '%';
+                    const size = Math.random() * 3 + 1 + 2;
+                    star.style.width = size + 'px';
+                    star.style.height = size + 'px';
+                    
+                    const delay = Math.random() * 3 + 's';
+                    const duration = Math.random() * 2 + 1 + 's';
+                    star.style.animationDelay = delay;
+                    star.style.animationDuration = duration;
+                    
+                    const colors = ['#FFD700', '#FFA500', '#FFE4B5', '#FFFF00', '#FFD300'];
+                    star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    star.style.boxShadow = `0 0 ${size * 2}px ${size}px rgba(255, 215, 0, 0.4)`;
+                    
+                    starsContainer.appendChild(star);
+                }
+            }
+            
+            function createParticles()
+            {
+                const particlesContainer = document.querySelector('.particles-container');
+                const particleCount = 25 + 10;
+                
+                for (let i = 0; i < particleCount; i++)
+                {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    particle.style.left = Math.random() * 100 + '%';
+                    
+                    const size = Math.random() * 5 + 3 + 2;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    
+                    const duration = Math.random() * 7 + 8;
+                    particle.style.animationDuration = duration + 's';
+                    
+                    const delay = -(Math.random() * duration);
+                    particle.style.animationDelay = delay + 's';
+                    
+                    const colors = [
+                        'rgba(255, 140, 0, 0.8)',
+                        'rgba(255, 69, 0, 0.7)',
+                        'rgba(255, 215, 0, 0.9)',
+                        'rgba(238, 130, 238, 0.6)',
+                        'rgba(255, 165, 0, 0.8)'
+                    ];
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            function createPentagons()
+            {
+                const pentagonsContainer = document.querySelector('.pentagons-container');
+                const pentagonCount = 8 + 3 + 5;
+                const colors = ['#FFD700', '#FFA500', '#FFE4B5', '#FFFF00', '#FFD300', '#FFFFFF'];
+                const gridCols = Math.ceil(Math.sqrt(pentagonCount * 1.2));
+                const gridRows = Math.ceil(pentagonCount / gridCols);
+                const cellWidth = 100 / gridCols;
+                const cellHeight = 100 / gridRows;
+                const positions = [];
+
+                for (let row = 0; row < gridRows; row++)
+                {
+                    for (let col = 0; col < gridCols; col++)
+                    {
+                        if (positions.length >= pentagonCount) break;
+                        positions.push({ col, row });
+                    }
+                }
+                
+                for (let i = 0; i < pentagonCount; i++)
+                {
+                    const pentagon = document.createElement('div');
+                    pentagon.className = 'pentagon';
+                    
+                    const gridPos = positions[i];
+                    const baseX = gridPos.col * cellWidth + cellWidth / 2;
+                    const baseY = gridPos.row * cellHeight + cellHeight / 2;
+                    
+                    const offsetX = (Math.random() - 0.5) * cellWidth * 0.8;
+                    const offsetY = (Math.random() - 0.5) * cellHeight * 0.8;
+                    
+                    pentagon.style.left = Math.max(5, Math.min(95, baseX + offsetX)) + '%';
+                    pentagon.style.top = Math.max(5, Math.min(95, baseY + offsetY)) + '%';
+                    
+                    const size = Math.random() * 40 + 25;
+                    pentagon.style.width = size + 'px';
+                    pentagon.style.height = size + 'px';
+                    
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    pentagon.innerHTML = `
+                        <svg viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="pentagonGradient${i}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:${color};stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:0.8" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M50,5 L61,35 L95,35 L68,57 L79,91 L50,70 L21,91 L32,57 L5,35 L39,35 Z" 
+                                  fill="url(#pentagonGradient${i})" />
+                        </svg>
+                    `;
+                    
+                    const delay = Math.random() * 5 + 's';
+                    const duration = Math.random() * 3 + 4 + 's';
+                    pentagon.style.animationDelay = delay;
+                    pentagon.style.animationDuration = duration;
+                    
+                    const initialRotation = Math.random() * 360;
+                    pentagon.style.setProperty('--initial-rotation', initialRotation + 'deg');
+                    
+                    pentagonsContainer.appendChild(pentagon);
+                }
+            }
+            
+            createStars();
+            createParticles();
+            createPentagons();
+        });
+    </script>
+</body>
+</html>
