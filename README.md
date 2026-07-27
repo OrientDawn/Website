@@ -13,5 +13,7 @@ The enterprise has two icons, as shown in the following display：
 <img width="30%" height="30%" alt="logo" src="https://github.com/user-attachments/assets/5463751e-95c0-45f1-a89a-bfa38ba0b559" />
 <br>
 <img width="1427" height="400" alt="logo_broadwise" src="https://github.com/user-attachments/assets/bddbc597-5a1f-41da-b7b7-3565081edad5" />
+<br>
+The timestamp file of the copyright of the artwork, the above three icons are our company's artworks
 
 Beijing Orient Dawn reserves all rights
