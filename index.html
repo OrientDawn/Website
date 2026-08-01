@@ -1731,22 +1731,54 @@
                         </div>
                     </div>
                     
-                    <div class="relative z-10">
+                    <div class="relative z-10 mb-12 scroll-animate-right">
                         <div class="flex flex-col md:flex-row items-center">
                             <div class="md:w-1/2 md:pr-12 md:text-right"></div>
                             <div class="relative">
-                                <div class="w-5 h-5 bg-gray-300 rounded-full border-4 border-white shadow-lg z-10 relative"></div>
+                                <div class="w-5 h-5 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full border-4 border-white shadow-lg shadow-emerald-500/40 z-10 relative"></div>
+                                <div class="absolute inset-0 w-5 h-5 bg-emerald-400 rounded-full animate-ping opacity-30"></div>
                             </div>
                             <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 card-hover relative overflow-hidden group">
+                                    <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                                        <div class="absolute top-4 right-4 w-4 h-4 bg-emerald-500 rounded-full animate-pulse"></div>
+                                        <div class="absolute top-12 right-6 w-3 h-3 bg-emerald-400 rounded-full" style="animation: pulse 2s ease-in-out infinite; animation-delay: 0.5s;"></div>
+                                        <div class="absolute top-6 right-14 w-3 h-3 bg-emerald-300 rounded-full" style="animation: pulse 2s ease-in-out infinite; animation-delay: 1s;"></div>
+                                        <div class="absolute top-16 right-4 w-2 h-2 bg-emerald-200 rounded-full" style="animation: pulse 2s ease-in-out infinite; animation-delay: 1.5s;"></div>
+                                        <div class="absolute top-20 right-10 w-2 h-2 bg-emerald-100 rounded-full" style="animation: pulse 2s ease-in-out infinite; animation-delay: 0.75s;"></div>
+                                    </div>
+                                    <div class="absolute bottom-3 left-3 w-16 h-16 opacity-5">
+                                        <div class="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-500 rotate-45 origin-bottom-left"></div>
+                                        <div class="absolute bottom-2 left-0 w-10 h-0.5 bg-emerald-400 rotate-45 origin-bottom-left"></div>
+                                        <div class="absolute bottom-4 left-0 w-6 h-0.5 bg-emerald-300 rotate-45 origin-bottom-left"></div>
+                                    </div>
+                                    <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium mb-3">资讯平台里程碑</span>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">2026年8月1日</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        启明曙光新闻发布中心完成开发，主营企业新闻、行业资讯与官方通知内容的发布及公示。
+                                    </p>
+                                    <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
                                 <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl border-2 border-dashed border-gray-300 relative overflow-hidden">
                                     <span class="inline-block px-3 py-1 bg-gray-200 text-gray-500 rounded-full text-xs font-medium mb-3">即将到来</span>
                                     <h3 class="text-xl font-bold text-gray-400 mb-2">未来规划</h3>
                                     <p class="text-gray-400 text-sm leading-relaxed">
                                         持续拓展AI技术应用场景，深化技术普惠理念。
                                     </p>
-                                    <div class="absolute top-2 right-2 w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+                                    <div class="absolute top-2 left-2 w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
                                 </div>
                             </div>
+                            <div class="relative">
+                                <div class="w-5 h-5 bg-gray-300 rounded-full border-4 border-white shadow-lg z-10 relative"></div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12"></div>
                         </div>
                     </div>
                 </div>
@@ -1988,7 +2020,7 @@
                 </div>
 
                 <div class="border-t border-white/10 pt-6 text-center">
-                    <p class="text-gray-300 text-xs">版权所有 © 2026 北京启明曙光科技有限公司 保留最终解释权 | 更新日期: 2026年7月31日</p>
+                    <p class="text-gray-300 text-xs">版权所有 © 2026 北京启明曙光科技有限公司 保留最终解释权 | 更新日期: 2026年8月1日</p>
                     <p class="text-gray-300 text-xs mt-1">
                         京ICP备2026006478号-1 <img src="./image/icp.png" alt="ICP备案图标" class="inline align-middle mx-1 h-3"> 京公网安备11010602202283号
                     </p>
@@ -2473,19 +2505,65 @@
 
             const joinForm = document.getElementById('joinForm');
             if (joinForm) {
+                const requiredFields = ['name', 'phone', 'email', 'position', 'message'];
+
+                function setFieldError(input, show) {
+                    if (show) {
+                        input.classList.add('border-red-500', 'ring-2', 'ring-red-500/30');
+                        input.classList.remove('border-gray-300');
+                    } else {
+                        input.classList.remove('border-red-500', 'ring-2', 'ring-red-500/30');
+                        input.classList.add('border-gray-300');
+                    }
+                }
+
+                // 输入或选择时清除该字段的错误状态
+                requiredFields.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.addEventListener('input', () => setFieldError(el, false));
+                        el.addEventListener('change', () => setFieldError(el, false));
+                    }
+                });
+
                 joinForm.addEventListener('submit', function(e) {
                     e.preventDefault();
+                    const msg = document.getElementById('joinFormMsg');
+
+                    let hasError = false;
+                    let firstError = null;
+
+                    requiredFields.forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            if (!el.value.trim()) {
+                                setFieldError(el, true);
+                                hasError = true;
+                                if (!firstError) firstError = el;
+                            } else {
+                                setFieldError(el, false);
+                            }
+                        }
+                    });
+
+                    if (hasError) {
+                        msg.classList.remove('hidden');
+                        msg.className = 'text-center text-sm mt-3 text-red-600';
+                        msg.textContent = '请填写所有必填项，表单不可为空。';
+                        if (firstError) firstError.focus();
+                        return;
+                    }
+
                     const btn = document.getElementById('joinSubmitBtn');
                     const btnText = btn.querySelector('.btn-text');
                     const btnLoading = btn.querySelector('.btn-loading');
-                    const msg = document.getElementById('joinFormMsg');
-                    
+
                     btn.disabled = true;
                     btnText.classList.add('hidden');
                     btnLoading.classList.remove('hidden');
                     btnLoading.classList.add('inline-flex');
                     msg.classList.add('hidden');
-                    
+
                     setTimeout(() => {
                         btn.disabled = false;
                         btnText.classList.remove('hidden');
