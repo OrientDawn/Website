@@ -334,6 +334,104 @@
             transition: width 0.1s linear;
             border-radius: 0 2px 2px 0;
         }
+
+        /* ===== 入场动画 ===== */
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-scale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes expand-width {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+        .animate-fade-in-scale { animation: fade-in-scale 0.6s ease-out forwards; }
+        .animate-expand-width { animation: expand-width 1s ease-out forwards; }
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+
+        /* ===== 滚动触发动画 ===== */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-animate-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scroll-animate-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scroll-animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===== 装饰动画 ===== */
+        @keyframes rotate-diamond {
+            0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.3; }
+            50% { transform: rotate(45deg) scale(1.2); opacity: 0.6; }
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        @keyframes pulse-ring-2 {
+            0% { transform: scale(1.2); opacity: 0.6; }
+            100% { transform: scale(1.8); opacity: 0; }
+        }
+        @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes twinkle-sign {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+        .animate-rotate-diamond { animation: rotate-diamond 4s ease-in-out infinite; }
+        .animate-pulse-ring {
+            animation: pulse-ring 2s ease-out infinite;
+            border: 2px solid rgba(255,138,0,0.5);
+        }
+        .animate-pulse-ring-2 {
+            animation: pulse-ring-2 2s ease-out infinite;
+            border: 2px solid rgba(255,138,0,0.3);
+            animation-delay: 1s;
+        }
+        .animate-orbit { animation: orbit 10s linear infinite; }
+        .animate-twinkle-sign { animation: twinkle-sign 2s ease-in-out infinite; }
+        .animate-pulse-subtle { animation: pulse-subtle 4s ease-in-out infinite; }
     </style>
 </head>
 
@@ -344,13 +442,13 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-relaxed text-shadow-lg">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-relaxed text-shadow-lg animate-fade-in-up opacity-0">
                     诚邀英才 共创未来
                 </h1>
-                <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-shadow-md">
+                <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-shadow-md animate-fade-in-up animate-delay-200">
                     自由办公 · 结果导向 · 同步成长 · 共同富裕
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 animate-delay-400">
                     <a href="#positions" class="glow-button bg-secondary text-white px-8 py-4 rounded-full font-semibold hover:bg-secondary/90 hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center justify-center gap-2 hover:shadow-xl group">
                         <i class="fa-solid fa-briefcase"></i>
                         查看招聘岗位
@@ -367,7 +465,7 @@
     <section id="channels" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 scroll-animate">
                     <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-600 rounded-full text-sm font-medium mb-4">RECRUITMENT CHANNELS</span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">招聘渠道</h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto rounded-full"></div>
@@ -375,7 +473,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    <div class="card-hover bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+                    <div class="card-hover bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 scroll-animate">
                         <div class="flex items-center mb-6">
                             <div class="relative">
                                 <div class="w-14 h-14 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-6 transition-transform">
@@ -397,7 +495,7 @@
                         </a>
                     </div>
 
-                    <div class="card-hover bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-secondary/30 transition-all duration-300">
+                    <div class="card-hover bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-secondary/30 transition-all duration-300 scroll-animate">
                         <div class="flex items-center mb-6">
                             <div class="relative">
                                 <div class="w-14 h-14 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-6 transition-transform">
@@ -419,7 +517,7 @@
                         </a>
                     </div>
 
-                    <div class="card-hover bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-500/30 transition-all duration-300">
+                    <div class="card-hover bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-500/30 transition-all duration-300 scroll-animate">
                         <div class="flex items-center mb-6">
                             <div class="relative">
                                 <div class="w-14 h-14 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-6 transition-transform">
@@ -442,7 +540,7 @@
                     </div>
                 </div>
 
-                <div class="card-hover bg-gradient rounded-2xl p-10 text-white text-center shadow-xl relative overflow-hidden">
+                <div class="card-hover bg-gradient rounded-2xl p-10 text-white text-center shadow-xl relative overflow-hidden scroll-animate-scale">
                     <!-- 装饰性圆形 -->
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
                     <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full"></div>
@@ -470,14 +568,14 @@
     <section id="culture" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 scroll-animate">
                     <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-600 rounded-full text-sm font-medium mb-4">EMPLOYMENT PHILOSOPHY</span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">用工理念</h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto rounded-full"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                    <div class="culture-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm transition-all duration-300">
+                    <div class="culture-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm transition-all duration-300 scroll-animate">
                         <div class="relative mb-6">
                             <div class="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-orange-500/10 rounded-2xl flex items-center justify-center">
                                 <i class="fa-solid fa-home text-orange-500 text-3xl"></i>
@@ -487,7 +585,7 @@
                         <p class="text-gray-600 leading-relaxed">您可以完全自由地安排工作时间和工作地点，享受工作与生活的完美平衡。</p>
                     </div>
 
-                    <div class="culture-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm transition-all duration-300">
+                    <div class="culture-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm transition-all duration-300 scroll-animate">
                         <div class="relative mb-6">
                             <div class="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-orange-500/10 rounded-2xl flex items-center justify-center">
                                 <i class="fa-solid fa-bullseye text-orange-500 text-3xl"></i>
@@ -497,7 +595,7 @@
                         <p class="text-gray-600 leading-relaxed">我们关注您的工作成果，而非工作时长，给予您最大的发挥空间。</p>
                     </div>
 
-                    <div class="culture-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm transition-all duration-300">
+                    <div class="culture-card bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm transition-all duration-300 scroll-animate">
                         <div class="relative mb-6">
                             <div class="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-orange-500/10 rounded-2xl flex items-center justify-center">
                                 <i class="fa-solid fa-users text-orange-500 text-3xl"></i>
@@ -508,7 +606,7 @@
                     </div>
                 </div>
 
-                <div class="card-hover bg-gradient rounded-2xl p-10 text-white shadow-xl relative overflow-hidden">
+                <div class="card-hover bg-gradient rounded-2xl p-10 text-white shadow-xl relative overflow-hidden scroll-animate-scale">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa-solid fa-handshake text-2xl"></i>
@@ -526,7 +624,7 @@
                     </div>
                 </div>
 
-                <div class="mt-8 bg-red-50 border-2 border-red-200 rounded-2xl p-8 relative overflow-hidden">
+                <div class="mt-8 bg-red-50 border-2 border-red-200 rounded-2xl p-8 relative overflow-hidden scroll-animate">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-red-100/50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                     <div class="relative z-10">
                         <div class="flex items-center justify-center gap-3 mb-4">
@@ -547,7 +645,7 @@
     <section id="process" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 scroll-animate">
                     <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-600 rounded-full text-sm font-medium mb-4">RECRUITMENT PROCESS</span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">招聘流程</h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto rounded-full"></div>
@@ -558,7 +656,7 @@
                     <div class="absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary via-primary to-secondary hidden md:block rounded-full"></div>
                     
                     <div class="space-y-8">
-                        <div class="flex items-start gap-6 group">
+                        <div class="flex items-start gap-6 group scroll-animate-left">
                             <div class="relative z-10">
                                 <div class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">1</div>
                                 <div class="absolute -inset-2 bg-gradient-to-br from-secondary/20 to-orange-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -572,7 +670,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-6 group">
+                        <div class="flex items-start gap-6 group scroll-animate-left">
                             <div class="relative z-10">
                                 <div class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">2</div>
                                 <div class="absolute -inset-2 bg-gradient-to-br from-secondary/20 to-orange-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -586,7 +684,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-6 group">
+                        <div class="flex items-start gap-6 group scroll-animate-left">
                             <div class="relative z-10">
                                 <div class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">3</div>
                                 <div class="absolute -inset-2 bg-gradient-to-br from-secondary/20 to-orange-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -600,7 +698,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-6 group">
+                        <div class="flex items-start gap-6 group scroll-animate-left">
                             <div class="relative z-10">
                                 <div class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">4</div>
                                 <div class="absolute -inset-2 bg-gradient-to-br from-secondary/20 to-orange-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -614,7 +712,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-6 group">
+                        <div class="flex items-start gap-6 group scroll-animate-left">
                             <div class="relative z-10">
                                 <div class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">5</div>
                                 <div class="absolute -inset-2 bg-gradient-to-br from-secondary/20 to-orange-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -628,7 +726,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-6 group">
+                        <div class="flex items-start gap-6 group scroll-animate-left">
                             <div class="relative z-10">
                                 <div class="w-20 h-20 bg-gradient-to-br from-primary to-green-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                                     <i class="fa-solid fa-check"></i>
@@ -652,7 +750,7 @@
     <section id="teams" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 scroll-animate">
                     <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-600 rounded-full text-sm font-medium mb-4">PROJECT TEAMS</span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">项目组介绍</h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto rounded-full"></div>
@@ -660,28 +758,28 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-6 border border-indigo-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-6 border border-indigo-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-graduation-cap"></i>
                             </div>
-                            <h3 class="font-extrabold text-gray-900 text-xl">就业指导项目组</h3>
+                            <h3 class="font-extrabold text-gray-900 text-xl">知途生涯规划项目组</h3>
                         </div>
                         <div class="mb-4">
                             <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider mb-2 block">概述</span>
-                            <p class="text-gray-600 text-sm leading-6">项目组成员专注服务应届大学生，提供简历撰写、修改优化辅导，搭配行业专家一对一面试指导，挖掘学生个人优势，解决应届生简历制作、亮点展示难题，有效提升求职竞争力。</p>
+                            <p class="text-gray-600 text-sm leading-6">聚焦大学生成长全链路，融合人生规划与就业指导服务。借助专业测评与专家一对一沟通，梳理个人优势、锚定长期发展方向，解决学业、职业选择迷茫，同步提升人生规划清晰度与校招求职竞争力。</p>
                         </div>
                         <div>
                             <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider mb-2 block">特长</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-2.5 py-1 bg-indigo-100/50 text-indigo-700 text-xs rounded-md">简历优化</span>
                                 <span class="px-2.5 py-1 bg-indigo-100/50 text-indigo-700 text-xs rounded-md">面试指导</span>
-                                <span class="px-2.5 py-1 bg-indigo-100/50 text-indigo-700 text-xs rounded-md">AI优化</span>
+                                <span class="px-2.5 py-1 bg-indigo-100/50 text-indigo-700 text-xs rounded-md">人生规划</span>
                                 <span class="px-2.5 py-1 bg-indigo-100/50 text-indigo-700 text-xs rounded-md">面试模拟</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-brain"></i>
@@ -702,7 +800,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-6 border border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-6 border border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-book-open"></i>
@@ -724,7 +822,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-6 border border-purple-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-6 border border-purple-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-heart"></i>
@@ -745,7 +843,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-eye"></i>
@@ -766,7 +864,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-6 border border-cyan-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-6 border border-cyan-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-search"></i>
@@ -787,7 +885,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl p-6 border border-red-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl p-6 border border-red-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-shield-halved"></i>
@@ -808,7 +906,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 border border-green-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 border border-green-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-lightbulb"></i>
@@ -829,7 +927,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-6 border border-yellow-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <div class="bg-gradient-to-br from-yellow-50 to-white rounded-2xl p-6 border border-yellow-100 shadow-sm hover:shadow-lg transition-all duration-300 group scroll-animate">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-tractor"></i>
@@ -857,7 +955,7 @@
     <section id="positions" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-16 scroll-animate">
                     <span class="inline-block px-4 py-1 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-600 rounded-full text-sm font-medium mb-4">RECRUITMENT POSITIONS</span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">招聘岗位</h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto rounded-full"></div>
@@ -865,7 +963,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">人工智能算法工程师</h3>
@@ -895,7 +993,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">智能体开发工程师</h3>
@@ -925,7 +1023,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">人工智能数据标注工程师</h3>
@@ -954,7 +1052,7 @@
                             <span class="px-3 py-1 bg-gradient-to-r from-primary/5 to-primary/10 text-primary text-xs rounded-lg font-medium position-tag">数据清洗</span>
                         </div>
                     </div>
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">人工智能易经系统研发</h3>
@@ -984,7 +1082,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">心理操控小模型研发</h3>
@@ -1014,7 +1112,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">机器黑客开发工程师</h3>
@@ -1046,7 +1144,7 @@
                         </div>
                     </div>
                     
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">爬虫开发工程师</h3>
@@ -1078,7 +1176,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">网络扫描工程师</h3>
@@ -1110,7 +1208,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">Ghidra 自动化插件开发工程师</h3>
@@ -1142,7 +1240,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">TitanEngine 调试器引擎研发工程师</h3>
@@ -1174,7 +1272,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">非杀毒杀毒软件研发工程师</h3>
@@ -1206,7 +1304,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">邮箱投递系统开发工程师</h3>
@@ -1238,7 +1336,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">暗网内容调查员</h3>
@@ -1264,7 +1362,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">本地销售经理</h3>
@@ -1290,7 +1388,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">舆情分析工程师</h3>
@@ -1316,7 +1414,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">国际关系研究员</h3>
@@ -1342,7 +1440,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">历史学研究员</h3>
@@ -1368,7 +1466,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">心理学研究员</h3>
@@ -1394,7 +1492,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">孙子兵法研究员</h3>
@@ -1420,7 +1518,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">新闻媒体记者</h3>
@@ -1446,7 +1544,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">国学研究员</h3>
@@ -1472,7 +1570,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">周易研究员</h3>
@@ -1498,7 +1596,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">哲学研究员</h3>
@@ -1524,7 +1622,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">经济学研究员</h3>
@@ -1550,7 +1648,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">马克思主义研究员</h3>
@@ -1576,7 +1674,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">塔罗牌研究员</h3>
@@ -1602,7 +1700,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">生肖、星座、MBTI研究员</h3>
@@ -1628,7 +1726,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">面相学研究员</h3>
@@ -1653,7 +1751,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">河图洛书研究员</h3>
@@ -1679,7 +1777,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">天文学研究员</h3>
@@ -1705,7 +1803,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">世界漏洞研究员</h3>
@@ -1731,7 +1829,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">农业农学研究学者</h3>
@@ -1756,7 +1854,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">气象学研究学者</h3>
@@ -1782,7 +1880,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">海水淡化技术研究员</h3>
@@ -1808,7 +1906,7 @@
                         </div>
                     </div>
 
-                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                    <div class="position-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm scroll-animate">
                         <div class="mb-4">
                             <div>
                                 <h3 class="font-extrabold text-gray-900 text-lg tracking-tight">新能源发电技术研究员</h3>
@@ -1921,7 +2019,7 @@
         </div>
         
         <div class="container mx-auto px-4 md:px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
+            <div class="max-w-4xl mx-auto text-center scroll-animate">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">加入我们 共创辉煌</h2>
                 <p class="text-lg opacity-90 mb-10 max-w-2xl mx-auto leading-relaxed">兴趣与探索欲是人类不断进步的源泉，期待您的加入！</p>
                 <div class="flex flex-wrap justify-center gap-4">
@@ -2075,6 +2173,24 @@
                 const offset = ringCircumference - (scrollPercent / 100) * ringCircumference;
                 backToTopRing.style.strokeDashoffset = offset;
             }
+        });
+
+        // 滚动触发动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
