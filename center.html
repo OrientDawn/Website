@@ -378,6 +378,15 @@
         .animate-orbit { animation: orbit 10s linear infinite; }
         .animate-twinkle-sign { animation: twinkle-sign 2s ease-in-out infinite; }
         .animate-pulse-subtle { animation: pulse-subtle 4s ease-in-out infinite; }
+
+        /* 锁定移动端左右滚动 */
+        html, body {
+            overflow-x: hidden;
+        }
+        body {
+            touch-action: pan-y;
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
 </head>
 
