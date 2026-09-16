@@ -11,9 +11,9 @@
     <link rel="alternate" href="https://www.orientdawn.com/center.html" hreflang="zh-CN">
     <link rel="alternate" href="https://www.orientdawn.com/center.html" hreflang="zh">
     <link rel="alternate" href="https://www.orientdawn.com/center.html" hreflang="x-default">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.orientdawn.com/image/alliance.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.orientdawn.com/image/alliance.png">
-    <link rel="apple-touch-icon" href="https://www.orientdawn.com/image/alliance.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.orientdawn.com/image/center_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.orientdawn.com/image/center_logo.png">
+    <link rel="apple-touch-icon" href="https://www.orientdawn.com/image/center_logo.png">
     <meta name="description" content="启明曙光创新中心（ORIENT DAWN INNOVATION CENTER）于2026年7月3日成立，注册地址位于北京市房山区，是由北京启明曙光科技有限公司发起的人才储备与技术交流平台">
     <meta name="keywords" content="启明曙光创新中心,ORIENT DAWN INNOVATION CENTER,人才储备平台,科创人才,人工智能,技术普惠">
     <meta name="author" content="北京启明曙光科技有限公司">
@@ -25,17 +25,17 @@
     <meta name="geo.placename" content="北京市">
     <meta property="og:title" content="启明曙光创新中心 | ORIENT DAWN INNOVATION CENTER">
     <meta property="og:description" content="启明曙光创新中心（ORIENT DAWN INNOVATION CENTER）于2026年7月3日成立，注册地址位于北京市房山区，是由北京启明曙光科技有限公司发起的人才储备与技术交流平台。">
-    <meta property="og:url" content="https://www.orientdawn.com/alliance.html">
+    <meta property="og:url" content="https://www.orientdawn.com/center_logo.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="启明曙光官网">
-    <meta property="og:image" content="https://www.orientdawn.com/image/alliance.png">
+    <meta property="og:image" content="https://www.orientdawn.com/image/center_logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="启明曙光创新中心 | ORIENT DAWN INNOVATION CENTER">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="启明曙光创新中心 | ORIENT DAWN INNOVATION CENTER">
     <meta name="twitter:description" content="启明曙光创新中心（ORIENT DAWN INNOVATION CENTER）于2026年7月3日成立，注册地址位于北京市房山区，是由北京启明曙光科技有限公司发起的人才储备与技术交流平台。">
-    <meta name="twitter:image" content="https://www.orientdawn.com/image/alliance.png">
+    <meta name="twitter:image" content="https://www.orientdawn.com/image/center_logo.png">
     <meta name="twitter:site" content="@orientdawn">
     
     <script src="./js/tailwindcss.js"></script>
@@ -392,7 +392,7 @@
 
 <body class="font-sans text-dark bg-gray-50 scroll-smooth">
     <div id="scroll-progress"></div>
-    <section id="home" class="text-white pt-24 pb-16 relative overflow-hidden" style="background-image: url('./image/jinshan.webp'); background-size: cover; background-position: center;">
+    <section id="home" class="text-white pt-24 pb-16 relative overflow-hidden" style="background-image: url('./image/center_header.webp'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/5 to-black/15"></div>
         <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
@@ -439,7 +439,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div class="flex justify-center lg:justify-start scroll-animate-left">
                             <div class="relative">
-                                <img src="./image/alliance.png" alt="平台图标" class="w-full max-w-sm md:max-w-md object-contain drop-shadow-lg">
+                                <img src="./image/center_logo.png" alt="平台图标" class="w-full max-w-sm md:max-w-md object-contain drop-shadow-lg">
                             </div>
                         </div>
                         <div class="space-y-6 scroll-animate-right">
@@ -1664,24 +1664,24 @@
                 loader.style.opacity = '0';
                 setTimeout(() => { loader.style.display = 'none'; }, 500);
             }
+        });
 
-            // 滚动触发动画
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+        // 滚动触发动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale').forEach(el => {
-                observer.observe(el);
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale').forEach(el => {
+            observer.observe(el);
         });
 
         document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]').forEach(link => {
